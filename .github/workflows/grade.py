@@ -27,7 +27,7 @@ if COMMIT_TIME is None:
 else:
     COMMIT_TIME = dt2.strptime(json.loads(COMMIT_TIME), "%Y-%m-%dT%H:%M:%SZ")
 
-URL = os.getenv('PROF_GITHUB').strip()
+URL = os.getenv('PROF_GITHUB', '').strip()
 commit_time_string = COMMIT_TIME.strftime('%Y%m%d%H%M%S')
 GRADER_EXEC = 'grader'
 GRADER_FOLDER = 'comments'
@@ -39,22 +39,35 @@ def main():
         print('Variable PROF_GITHUB not defined')
         return
 
-    URI = URL.replace('https://github.com/', '').strip()
+    URI = URL.replace('https://github.com/', '').strip().strip('/')
     CONTENTS = f"https://api.github.com/repos/{URI}/contents/"
-
-    prof_user, prof_repo = URI.split("/")
-    print(f'PROFESSOR GITHUB: {prof_user.encode()} {prof_repo.encode()}')
+    prof_user, prof_repo = URI.split('/', 1)
+    
+    print("PROFESSOR GITHUB:", prof_user, prof_repo)
 
     git = github3.GitHub(token=GITHUB_TOKEN)
     repo = git.repository(GITHUB_REPOSITORY_OWNER, GITHUB_REPOSITORY_NAME)
 
-    js = requests.get(CONTENTS).json()
-    if isinstance(js, (str, bytes)):
+    response = requests.get(CONTENTS, timeout=20)
+    response.raise_for_status()
+    js = response.json()
+        
+    if not isinstance(js, list):
+        print("ERRO: esperava uma lista de arquivos e diretórios.", flush=True)
         return
-
-    PROF_TASKS = [f['name'] for f in js if f['type'] == 'dir']
+    
+    PROF_TASKS = [
+        f['name'] for f in js
+        if f.get('type') == 'dir'
+    ]
     COMMIT_TASKS = [file.split('/')[0] for file in COMMIT_FILES]
+    
+    print("DEBUG: tarefas do professor:", PROF_TASKS, flush=True)
+    print("DEBUG: arquivos do commit:", COMMIT_FILES, flush=True)
+    print("DEBUG: tarefas do commit:", COMMIT_TASKS, flush=True)
+    
     if len(PROF_TASKS) == 0:
+        print("ERRO: nenhum diretório de tarefa encontrado no repositório do professor.", flush=True)
         return
     if GITHUB_ACTOR == prof_user:
         tasks_to_grade = set(PROF_TASKS)
@@ -63,9 +76,12 @@ def main():
 
     print(tasks_to_grade)
     scores = list()
+    print("DEBUG: iniciando correção das submissões")
     for task in tasks_to_grade:
+        print(task)
         if not os.path.exists(task):
             continue
+        print(task)
         prof_files = {r['name']: r["download_url"] for r in requests.get(f'{CONTENTS}/{task}').json()}
         if DATE_FILE in prof_files:
             date = requests.get(prof_files[DATE_FILE]).content
