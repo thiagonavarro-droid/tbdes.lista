@@ -1,0 +1,4 @@
+/__w/tbdes.lista/tbdes.lista/lista02/grader: /lib/x86_64-linux-gnu/libm.so.6: version `GLIBC_2.38' not found (required by /__w/tbdes.lista/tbdes.lista/lista02/grader)
+/__w/tbdes.lista/tbdes.lista/lista02/grader: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.38' not found (required by /__w/tbdes.lista/tbdes.lista/lista02/grader)
+/__w/tbdes.lista/tbdes.lista/lista02/grader: /lib/x86_64-linux-gnu/libm.so.6: version `GLIBC_2.38' not found (required by /tmp/onefile_163_1794794217_774704/libpython3.12.so.1.0)
+/__w/tbdes.lista/tbdes.lista/lista02/grader: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.38' not found (required by /tmp/onefile_163_1794794217_774704/libpython3.12.so.1.0)
