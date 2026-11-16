@@ -1,0 +1,83 @@
+Preparando dados aleatórios de teste da Lista 02 (com casos de fronteira garantidos)...
+Testando exercício 1...
+Execução de ex1.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex1] 2/2 verificações aprovadas; 0.50/0.50 pontos.
+Testando exercício 2...
+Execução de ex2.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex2] 2/2 verificações aprovadas; 0.50/0.50 pontos.
+Testando exercício 3...
+Execução de ex3.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex3] 2/2 verificações aprovadas; 0.50/0.50 pontos.
+Testando exercício 4...
+Execução de ex4.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex4] 2/2 verificações aprovadas; 0.50/0.50 pontos.
+Testando exercício 5...
+Execução de ex5.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+    ✅ Utiliza um operador de casamento de padrões (requisito obrigatório)
+[ex5] 3/3 verificações aprovadas; 0.50/0.50 pontos.
+Testando exercício 6...
+Execução de ex6.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex6] 2/2 verificações aprovadas; 0.50/0.50 pontos.
+Testando exercício 7...
+Execução de ex7.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex7] 2/2 verificações aprovadas; 0.50/0.50 pontos.
+Testando exercício 8...
+Execução de ex8.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex8] 2/2 verificações aprovadas; 1.00/1.00 pontos.
+Testando exercício 9...
+Execução de ex9.sql: ERRO: psql:ex9.sql:5: ERROR:  missing FROM-clause entry for table "nome"
+LINE 1: SELECT nome. preco
+               ^
+❌ [ex9] Arquivo não executou corretamente; nota 0.
+Testando exercício 10...
+Execução de ex10.sql: ERRO: psql:ex10.sql:5: ERROR:  syntax error at or near "FROM"
+LINE 5: FROM Produto;
+        ^
+❌ [ex10] Arquivo não executou corretamente; nota 0.
+Testando exercício 11...
+Execução de ex11.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex11] 2/2 verificações aprovadas; 1.00/1.00 pontos.
+Testando exercício 12...
+Execução de ex12.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex12] 2/2 verificações aprovadas; 1.50/1.50 pontos.
+Testando exercício 13...
+Execução de ex13.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex13] 2/2 verificações aprovadas; 1.50/1.50 pontos.
+Testando exercício 14...
+❌ [ex14] Este exercício deve consultar somente a tabela Itempedido. Nota 0 nesta questão.
+Testando exercício 15...
+Execução de ex15.sql: sem erro.
+    ✅ Retorna as linhas e os valores esperados
+    ✅ Respeita a ordenação e os critérios de desempate solicitados
+[ex15] 2/2 verificações aprovadas; 1.50/1.50 pontos.
+Pontuação estimada: 10.00/13.00 pontos.
+Correção da Lista 02 finalizada.
+Atualizando notas no painel...
+{'repository': 'thiagonavarro-droid/tbdes.lista', 'run': '43790629314'}
+Continuando sem aguardar a resposta do painel.
+Se não for atualizado, favor clicar no link abaixo
+https://script.google.com/macros/s/AKfycbyB8Qs1MMBEpEztl-VD_GDsTNvb6h7m1xywcAKEN1jAIGNaUsHusots9qE6csbUQiX-HA/exec?repository=thiagonavarro-droid/tbdes.lista&run=43790629314
+Nota total: 10.00
+{"scores": {"ex1": 0.5, "ex2": 0.5, "ex3": 0.5, "ex4": 0.5, "ex5": 0.5, "ex6": 0.5, "ex7": 0.5, "ex8": 1.0, "ex9": 0.0, "ex10": 0.0, "ex11": 1.0, "ex12": 1.5, "ex13": 1.5, "ex14": 0.0, "ex15": 1.5}}
